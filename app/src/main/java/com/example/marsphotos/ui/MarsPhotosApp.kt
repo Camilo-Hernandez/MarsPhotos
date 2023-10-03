@@ -26,11 +26,13 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.marsphotos.R
 import com.example.marsphotos.ui.screens.HomeScreen
 import com.example.marsphotos.ui.screens.MarsViewModel
 
+@Preview
 @Composable
 fun MarsPhotosApp(modifier: Modifier = Modifier) {
     Scaffold(
@@ -44,9 +46,7 @@ fun MarsPhotosApp(modifier: Modifier = Modifier) {
             color = MaterialTheme.colors.background
         ) {
             val marsViewModel: MarsViewModel = viewModel()
-            HomeScreen(
-                marsUiState = marsViewModel.marsUiState
-            )
+            HomeScreen(marsUiState = marsViewModel.marsUiState)
         }
     }
 }

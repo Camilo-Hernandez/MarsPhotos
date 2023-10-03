@@ -5,7 +5,7 @@ MarsPhotos is a demo app that shows actual images of Mar's surface. These images
 real-life photos from Mars captured by NASA's Mars rovers. The data is stored on a Web server
 as a REST web service.
 
-This app demonstrated the use of [Retrofit](https://square.github.io/retrofit/) to make REST requests to the web service, [Gson](https://github.com/google/gson) to
+This app demonstrated the use of [Retrofit](https://square.github.io/retrofit/) to make REST requests to the web service, [kotlinx.serialization](https://kotlinlang.org/docs/serialization.html) to
 handle the deserialization of the returned JSON to Kotlin data objects, and [Coil](https://coil-kt.github.io/coil/) to load images by URL.
 
 ## [Build this app through hands-on codelabs in the Android Basics with Compose Course](https://developer.android.com/courses/android-basics-compose/course)

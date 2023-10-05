@@ -1,5 +1,6 @@
 package com.example.marsphotos.fake
 
+import com.example.marsphotos.data.MarsPhoto
 import com.example.marsphotos.rules.TestDispatcherRule
 import com.example.marsphotos.ui.screens.MarsUiState
 import com.example.marsphotos.ui.screens.MarsViewModel
@@ -22,7 +23,7 @@ class MarsViewModelTest {
 
     @Test
     fun `Verify the retrieval of marsPhotos is correctly executed and the uiState is updated`() = runTest {
-        val expectedState: MarsUiState<String> = MarsUiState.Success(FakeDataSource.fakeMarsPhotos)
+        val expectedState: MarsUiState<List<MarsPhoto>> = MarsUiState.Success(FakeDataSource.fakeMarsPhotos)
         val realState = viewModelTest.marsUiState
         assertEquals(expectedState, realState)
     }

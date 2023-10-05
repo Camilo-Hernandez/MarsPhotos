@@ -32,7 +32,7 @@ import kotlinx.coroutines.launch
 import java.io.IOException
 
 sealed interface MarsUiState<out T> {
-    data class Success(val photos: List<MarsPhoto>) : MarsUiState<String>
+    data class Success<out T>(val photos: T) : MarsUiState<T>
     data object Error : MarsUiState<Nothing>
     data object Loading : MarsUiState<Nothing>
 }
@@ -41,7 +41,7 @@ class MarsViewModel(
     private val marsPhotosRepository: MarsPhotosRepository
 ) : ViewModel() {
     /** The mutable State that stores the status of the most recent request */
-    var marsUiState: MarsUiState<String> by mutableStateOf(MarsUiState.Loading)
+    var marsUiState: MarsUiState<List<MarsPhoto>> by mutableStateOf(MarsUiState.Loading)
         private set
 
     /**
@@ -63,6 +63,11 @@ class MarsViewModel(
                 MarsUiState.Error
             }
         }
+    }
+
+    fun retry() {
+        marsUiState = MarsUiState.Loading
+        getMarsPhotos()
     }
 
     companion object {

@@ -18,11 +18,11 @@ package com.example.marsphotos.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -32,18 +32,18 @@ import com.example.marsphotos.R
 import com.example.marsphotos.ui.screens.HomeScreen
 import com.example.marsphotos.ui.screens.MarsViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 fun MarsPhotosApp(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
-        topBar = { TopAppBar(title = { Text(stringResource(R.string.app_name)) }) }
+        topBar = { TopAppBar(title = { Text(stringResource(R.string.app_name)) }) },
     ) {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it),
-            color = MaterialTheme.colors.background
         ) {
             val marsViewModel: MarsViewModel = viewModel()
             HomeScreen(marsUiState = marsViewModel.marsUiState)

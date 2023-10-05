@@ -54,7 +54,7 @@ fun HomeScreen(
             .padding(16.dp), contentAlignment = Alignment.Center
     ) {
         when (marsUiState) {
-            is MarsUiState.Success -> Text(marsUiState.photos)
+            is MarsUiState.Success -> Text(stringResource(id = R.string.success_mars_photos_retrieved, marsUiState.photos.size))
             MarsUiState.Loading -> CircularProgressIndicator()
             is MarsUiState.Error -> ErrorScreen(modifier)
         }

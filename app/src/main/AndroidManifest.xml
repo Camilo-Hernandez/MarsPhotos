@@ -23,10 +23,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".MarsPhotosApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarsPhotosTheme"
-        tools:targetApi="32">
+        tools:targetApi="33">
         <activity
             android:name="com.example.marsphotos.MainActivity"
             android:exported="true"

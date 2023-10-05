@@ -46,7 +46,7 @@ fun MarsPhotosApp(modifier: Modifier = Modifier) {
                 .padding(it),
         ) {
             val marsViewModel: MarsViewModel = viewModel(factory = MarsViewModel.Factory)
-            HomeScreen(marsUiState = marsViewModel.marsUiState)
+            HomeScreen(marsUiState = marsViewModel.marsUiState, retry = marsViewModel::retry)
         }
     }
 }
